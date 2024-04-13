@@ -1,6 +1,7 @@
 rightwristX = "";
 rightwristY = "";
 rightwristSCORE = "";
+game_status = "";
 /*created by prashant shukla */
 
 var paddle2 =10,paddle1=10;
@@ -37,6 +38,7 @@ function setup(){
 
 function draw(){
 
+  if(game_status == "start"){
  background(0); 
 image(video, 0 , 0 , 700 , 600);
 
@@ -79,6 +81,7 @@ image(video, 0 , 0 , 700 , 600);
       fill("#ff0000");
       stroke("#ff0000");
       circle(rightwristX,rightwristY,20);
+    }
     }
 }
 
@@ -192,3 +195,9 @@ function gotPoses(results){
     console.log("rightwristX = "+rightwristX+" ,rightwristY = "+rightwristY+" ,rightwristSCORE = "+rightwristSCORE);
   }
 }
+
+function startGame(){
+game_status = "start";
+document.getElementById("status").innerHTML ="Game is Loaded";
+}
+
